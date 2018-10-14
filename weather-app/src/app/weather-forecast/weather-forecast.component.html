@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-1 col-sm-1"></div>
+  <div class="col-md-2 col-sm-3" *ngFor="let weather of weekData | paginate: { itemsPerPage: 6, currentPage: page }; let i = index;">
+    <mat-card style="margin-bottom:10px; border-radius: 10px; height: 300px">
+      <img *ngIf="weather.icon" src="{{weather.icon}}" alt="Snow" style="width:50%;">
+      <p id="tex_style">Day: <span style="color:magenta">{{i+1}}</span></p>
+      <p id="tex_style">Main Weather:<span  style="color:blue; font-style:italic"> {{weather.w_desc}}</span></p>
+      <p  id="tex_style">Temperature: {{weather.w_temp}}</p>
+      <p id="tex_style" *ngIf="weather.w_visibility">Visibility: {{weather.w_visibility}}</p>
+      <p id="tex_style">Clouds: {{weather.w_clouds}}</p>
+    </mat-card>
+  </div>
+  <div class="col-md-1 col-sm-5"></div>
+</div>

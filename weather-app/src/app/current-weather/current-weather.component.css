@@ -1,0 +1,56 @@
+#imaginary_container{
+    margin-top:5%; /* Don't copy this */
+    margin-bottom:5%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+#search-suggestions,
+#div-current {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#div-current {
+  z-index: 10;
+}
+#tex_style{
+    font-style: italic;
+}
+
+li{
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+}
+
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}

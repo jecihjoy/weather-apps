@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-6">
+    <form [formGroup]="weatherForm" (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="text">Enter Mood:</label>
+        <input type="text" class="form-control" id="text" [formControl]="mood">
+      </div>
+      <div class="form-group">
+        <label for="text">Today's Activities:</label>
+        <textarea class="form-control" rows="5" id="comment" [formControl]="activities"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+<div *ngIf="savedData" class="row" style="margin: 2%">
+  <div *ngFor="let data of savedData |  paginate: { itemsPerPage: 5, currentPage: page }; let i = index;" class="col-md-6">
+    <mat-card style="margin-bottom:20px">
+      <div class="row">
+        <p style="font-size:14px; font-style:italic; color: blue">Date: {{data.w_date | date }}</p>
+        <p style="font-size:14px; font-style:italic; color: blue">Main Weather: {{data.w_main}}</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-2">
+          <p>Temperature: {{data.w_temp}}</p>
+          <p>Description: {{data.w_description}}</p>
+        </div>
+        <div class="col-md-6 col-sm-2">
+          <p>Mood: {{data.mood}}</p>
+          <p>Activities: {{data.activity}}</p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div style="position: center">
+  <pagination-controls (pageChange)="page = $event" style="cursor: pointer; align-content: center"></pagination-controls>
+</div>

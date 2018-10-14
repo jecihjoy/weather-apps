@@ -1,0 +1,57 @@
+<!-- <p>
+  current-weather works!
+</p>
+<form [formGroup]="searchForm">
+  <input formControlName="search" placeholder="search by location">
+  <!-- <input #searchItem id="searchInput" (keyup)="searchLocation(searchItem.value)"> -->
+<!-- </form>
+
+<div>
+  <ul class="search-result">
+    <li *ngFor="let loc of locations">
+      <a routerLink="">
+        {{loc.name}}
+      </a>
+    </li>
+  </ul>
+</div> -->
+<mat-card style="margin:2%">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div id="imaginary_container">
+        <div class="input-group stylish-input-group">
+          <form [formGroup]="searchForm">
+            <input type="text" formControlName="search" class="form-control" placeholder="search by location">
+          </form>
+          <span class="input-group-addon">
+            <button type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search-suggestions" style="width:800px; margin:0 auto;">
+    <ul class="search-result">
+      <li *ngFor="let loc of locations">
+        <a [routerLink]="['/weather', loc.name]">
+          {{loc.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div style="background-color:red; height: 200px;" class="col-md-6">
+        <h4>ELDORET{{weather.w_desc}}</h4>
+      </div>
+      <div style="background-color:green; height: 200px;"class="col-md-5"></div>
+    </div>
+  </div>
+  <div style="margin-top: 2%">
+    <app-weather-forecast></app-weather-forecast>
+  </div>
+</mat-card>

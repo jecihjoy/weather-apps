@@ -1,0 +1,75 @@
+<!-- <p>
+  current-weather works!
+</p>
+<form [formGroup]="searchForm">
+  <input formControlName="search" placeholder="search by location">
+  <!-- <input #searchItem id="searchInput" (keyup)="searchLocation(searchItem.value)"> -->
+<!-- </form>
+
+<div>
+  <ul class="search-result">
+    <li *ngFor="let loc of locations">
+      <a routerLink="">
+        {{loc.name}}
+      </a>
+    </li>
+  </ul>
+</div> -->
+<mat-card style="margin:2%">
+<h2 style="text-align: left; font-style:italic; color: blue">WeatherApp</h2>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div id="imaginary_container">
+        <div class="input-group stylish-input-group">
+          <form [formGroup]="searchForm">
+            <input type="text" formControlName="search" class="form-control" placeholder="search by location">
+          </form>
+          <span class="input-group-addon">
+            <button type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="suggestionDiv" class="search-suggestions" style="width:800px; margin:0 auto;">
+    <ul class="search-result">
+      <li *ngFor="let loc of locations">
+        <a [routerLink]="['/weather', loc.name]" role="button" (click)="func()">
+          {{loc.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h4>{{title | uppercase }} CURRENT AND FORECAST WEATHER</h4>
+        <div class="row">
+          <div class="col-md-6 col-sm-3">
+            <img src="{{weather.icon}}" alt="Snow" style="width:40%;">
+            <p id="tex_style">{{weather.w_desc}}</p>
+          </div>
+          <div class="col-md-6 col-sm-3">
+            <p id="tex_style">Temperature: {{weather.w_temp}}</p>
+            <p id="tex_style">Maximum Temperature: {{weather.w_maxtemp}}</p>
+            <p id="tex_style">Minimun Temperature: {{weather.w_mintemp}}</p>
+            <p id="tex_style">Visibility: {{weather.w_visibility}}</p>
+            <p id="tex_style">Clouds: {{weather.w_clouds}}</p>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:15px" class="col-md-5">
+        <p style="font-size:28px; font-style:italic; color: blue">{{reccommendation}}</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 2%">
+    <app-weather-forecast></app-weather-forecast>
+  </div>
+  <div style="margin-top: 2%">
+    <app-mood-weather></app-mood-weather>
+  </div>
+</mat-card>
