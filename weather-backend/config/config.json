@@ -1,0 +1,13 @@
+{
+    "application": {
+        "host": "localhost",
+        "port": "3100"
+    },
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "weatherapp",
+        "multipleStatements": true
+    }
+}

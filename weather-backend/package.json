@@ -1,0 +1,16 @@
+{
+  "name": "weather-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jj",
+  "license": "ISC",
+  "dependencies": {
+    "good": "^8.1.1",
+    "hapi": "^17.6.0",
+    "mysql": "^2.16.0"
+  }
+}
